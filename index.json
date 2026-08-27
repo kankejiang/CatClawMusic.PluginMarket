@@ -1,0 +1,34 @@
+{
+  "$meta": {
+    "schema_version": 1,
+    "name": "CatClawMusic 官方插件市场",
+    "version": "2026-08-27",
+    "homepage": "https://github.com/kankejiang/CatClawMusic",
+    "repository": "https://github.com/kankejiang/CatClawMusic.PluginMarket",
+    "description": "猫爪音乐官方插件市场清单，全 GitHub 托管、零服务器",
+    "updated_at": "2026-08-27T09:22:39Z"
+  },
+  "CatClawMusic/lrclib": {
+    "author": "CatClawMusic",
+    "name": "lrclib",
+    "display_name": "LRCLIB 歌词",
+    "short_desc": "LRCLIB 在线歌词与多源兜底",
+    "version": "1.0.0",
+    "repo": "https://github.com/kankejiang/CatClawMusic.Plugins.Lrclib",
+    "desc": "LRCLIB 开放歌词库 + Lyrico 多源歌词兜底；音乐库浏览/标签编辑/批量操作（匹配·编辑·重命名·响度·歌词格式化·标签转移）/本地搜索",
+    "tags": [
+      "lyrics",
+      "music-library"
+    ],
+    "platforms": [
+      "android",
+      "windows"
+    ],
+    "host_version": ">=1.8.0",
+    "updated_at": "2026-08-25T15:41:00Z",
+    "stars": 0,
+    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.Lrclib/releases/download/v1.0.0/CatClawMusic.Plugins.Lrclib.ccp",
+    "sha256": "ff1511f82610e5480be1729df98b7efd45d28330de470f284354384f306e3fc3",
+    "download_size": 3393536
+  }
+}

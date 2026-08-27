@@ -1,0 +1,70 @@
+name: Validate
+
+on:
+  pull_request:
+    paths:
+      - 'index.json'
+      - 'del-plugins.json'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/validate.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: 校验插件清单
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 校验 index.json
+        run: python scripts/validate.py index.json del-plugins.json
+
+      - name: 校验墓碑文件
+        run: |
+          python - <<'EOF'
+          import json, sys
+          for path in ("del-plugins.json", "unreachable-plugins.json"):
+              with open(path, encoding="utf-8") as f:
+                  data = json.load(f)
+              if not isinstance(data, dict):
+                  sys.exit(f"{path} 必须是对象")
+              for k, v in data.items():
+                  if not isinstance(v, dict) or not str(v.get("reason", "")).strip():
+                      sys.exit(f"{path}[{k}] 必须是含非空 reason 的对象")
+          print("墓碑文件校验通过")
+          EOF
+
+      - name: 运行单元测试
+        run: python -m unittest discover -s tests -v
+
+      # 可达性抽查（不阻断合并：release 未发布是合法状态，仅提示）
+      - name: 仓库可达性抽查
+        continue-on-error: true
+        run: |
+          python - <<'EOF'
+          import json, re, urllib.request
+          with open("index.json", encoding="utf-8") as f:
+              data = json.load(f)
+          pat = re.compile(r"^https://github\.com/([A-Za-z0-9-]+)/([A-Za-z0-9_.-]+?)(?:\.git|/tree/[A-Za-z0-9_.-]+)?$")
+          for key, rec in data.items():
+              if key == "$meta":
+                  continue
+              m = pat.match(rec.get("repo", ""))
+              if not m:
+                  continue
+              owner, repo = m.group(1), m.group(2)
+              req = urllib.request.Request(
+                  f"https://api.github.com/repos/{owner}/{repo}",
+                  headers={"User-Agent": "CatClawMusic-PluginMarket-Validate"})
+              try:
+                  urllib.request.urlopen(req, timeout=15)
+              except Exception:
+                  print(f"::warning:: {key} 仓库不可达: {rec['repo']}")
+              else:
+                  print(f"ok: {key}")
+          EOF
