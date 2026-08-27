@@ -6,7 +6,7 @@
     "homepage": "https://github.com/kankejiang/CatClawMusic",
     "repository": "https://github.com/kankejiang/CatClawMusic.PluginMarket",
     "description": "猫爪音乐官方插件市场清单，全 GitHub 托管、零服务器",
-    "updated_at": "2026-08-27T09:46:51Z"
+    "updated_at": "2026-08-27T09:52:59Z"
   },
   "CatClawMusic/lrclib": {
     "author": "CatClawMusic",
@@ -49,7 +49,11 @@
       "windows"
     ],
     "host_version": ">=1.8.0",
-    "updated_at": "2026-08-27T09:00:00Z"
+    "updated_at": "2026-08-27T09:52:15Z",
+    "stars": 0,
+    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.LxSource/releases/download/v0.4.2/CatClawMusic.Plugins.LxSource.ccp",
+    "sha256": "afed65ca4da43332aa81729f88fb86fa020442c6e51dd1de89ab5afde7bc8812",
+    "download_size": 3177472
   },
   "CatClawMusic/netEaseMusic": {
     "author": "CatClawMusic",
@@ -69,6 +73,10 @@
       "windows"
     ],
     "host_version": ">=1.8.0",
-    "updated_at": "2026-08-27T07:01:58Z"
+    "updated_at": "2026-08-27T07:01:58Z",
+    "stars": 1,
+    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.Netease/releases/download/v0.3.10/CatClawMusic.Plugins.Netease.ccp",
+    "sha256": "1c811358eee853eb13600aa11c2ff68b855f6bbdbf3434fea40fc894cae4256d",
+    "download_size": 256512
   }
 }
