@@ -145,20 +145,25 @@ def sync() -> int:
             continue
 
         tag = str(release.get("tag_name") or "").lstrip("vV")
+        version_changed = tag and tag != record.get("version")
         if tag:
             record["version"] = tag
         if release.get("published_at"):
             record["updated_at"] = release["published_at"]
 
+        # 5 分钟级高频同步下，仅当版本变化/直链变化/缺 sha256 时才重新下载资产算哈希，
+        # 避免每次调度都拉取全部插件的 Release 大文件（无效高频下载易被 GitHub 限流）。
         asset = _pick_ccp_asset(release.get("assets") or [], repo_name)
         if asset:
+            need_hash = version_changed or not record.get("sha256") or record.get("download_url") != asset["browser_download_url"]
             record["download_url"] = asset["browser_download_url"]
-            try:
-                blob = _http_bytes(asset["browser_download_url"], token)
-                record["sha256"] = hashlib.sha256(blob).hexdigest()
-                record["download_size"] = len(blob)
-            except (urllib.error.URLError, TimeoutError) as ex:
-                print(f"warn: {key} 资产下载失败（跳过 sha256）: {ex}")
+            if need_hash:
+                try:
+                    blob = _http_bytes(asset["browser_download_url"], token)
+                    record["sha256"] = hashlib.sha256(blob).hexdigest()
+                    record["download_size"] = len(blob)
+                except (urllib.error.URLError, TimeoutError) as ex:
+                    print(f"warn: {key} 资产下载失败（跳过 sha256）: {ex}")
 
     # 3. 落盘（内容无变化时不写）
     index_changed = _write_json_if_changed(INDEX_PATH, data, [])
