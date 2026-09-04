@@ -2,8 +2,9 @@ name: Sync
 
 on:
   schedule:
-    # 每日 UTC 02:00（北京时间 10:00）同步一次
-    - cron: '0 2 * * *'
+    # 每 6 小时同步一次（UTC 02/08/14/20 → 北京时间 10/16/22/04），
+    # 缩短「插件发布 → 市场可见」的最坏滞后
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
