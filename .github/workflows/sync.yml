@@ -2,9 +2,9 @@ name: Sync
 
 on:
   schedule:
-    # 每 6 小时同步一次（UTC 02/08/14/20 → 北京时间 10/16/22/04），
-    # 缩短「插件发布 → 市场可见」的最坏滞后
-    - cron: '0 */6 * * *'
+    # 每 5 分钟同步一次（GitHub Actions 调度最小粒度；实际触发受队列影响可能延迟，
+    # 真实刷新以实际运行时刻为准）
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
