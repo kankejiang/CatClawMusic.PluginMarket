@@ -6,7 +6,7 @@
     "homepage": "https://github.com/kankejiang/CatClawMusic",
     "repository": "https://github.com/kankejiang/CatClawMusic.PluginMarket",
     "description": "猫爪音乐官方插件市场清单，全 GitHub 托管、零服务器",
-    "updated_at": "2026-09-06T10:50:26Z"
+    "updated_at": "2026-09-06T11:54:47Z"
   },
   "CatClawMusic/lrclib": {
     "author": "CatClawMusic",
@@ -60,7 +60,7 @@
     "name": "netEaseMusic",
     "display_name": "网易云官方接口",
     "short_desc": "网易云搜索/歌单/播放/歌词/下载",
-    "version": "0.3.13",
+    "version": "0.3.14",
     "repo": "https://github.com/kankejiang/CatClawMusic.Plugins.Netease",
     "desc": "网易云官方接口插件：搜索/歌单/歌手/排行榜/漫游/每日推荐/红心/播放/歌词（含译文与罗马音）/播放页下载音乐（五档音质：标准/极高/无损/Hires/高清臻音）",
     "tags": [
@@ -73,10 +73,10 @@
       "windows"
     ],
     "host_version": ">=1.8.0",
-    "updated_at": "2026-09-06T10:49:48Z",
+    "updated_at": "2026-09-06T11:54:34Z",
     "stars": 2,
-    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.Netease/releases/download/v0.3.13/CatClawMusic.Plugins.Netease.ccp",
-    "sha256": "83dbecf967aeda1b35d713f69656029f85971bb23ec38d01fb7343478da816ab",
+    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.Netease/releases/download/v0.3.14/CatClawMusic.Plugins.Netease.ccp",
+    "sha256": "a06e22de99a4d0bf54510bdbbeb404ea5e1cae9aa4c3eebbfa3ebefb4469d910",
     "download_size": 274944
   }
 }
