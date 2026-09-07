@@ -6,14 +6,14 @@
     "homepage": "https://github.com/kankejiang/CatClawMusic",
     "repository": "https://github.com/kankejiang/CatClawMusic.PluginMarket",
     "description": "猫爪音乐官方插件市场清单，全 GitHub 托管、零服务器",
-    "updated_at": "2026-09-06T15:43:59Z"
+    "updated_at": "2026-09-07T05:32:57Z"
   },
   "CatClawMusic/lrclib": {
     "author": "CatClawMusic",
     "name": "lrclib",
     "display_name": "LRCLIB 歌词",
     "short_desc": "LRCLIB 在线歌词与多源兜底",
-    "version": "1.2.0.7",
+    "version": "1.2.0.8",
     "repo": "https://github.com/kankejiang/CatClawMusic.Plugins.Lrclib",
     "desc": "LRCLIB 开放歌词库 + Lyrico 多源歌词兜底；音乐库浏览/标签编辑/批量操作（匹配·编辑·重命名·响度·歌词格式化·标签转移）/本地搜索",
     "tags": [
@@ -25,18 +25,18 @@
       "windows"
     ],
     "host_version": ">=1.8.0",
-    "updated_at": "2026-09-04T02:59:47Z",
+    "updated_at": "2026-09-07T05:24:40Z",
     "stars": 0,
-    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.Lrclib/releases/download/v1.2.0.7/CatClawMusic.Plugins.Lrclib.ccp",
-    "sha256": "8f08e260e0cbbd52edb7da11d2c53d23a704d1f8c2a7957a7e86d638a31658f0",
-    "download_size": 3486208
+    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.Lrclib/releases/download/v1.2.0.8/CatClawMusic.Plugins.Lrclib.ccp",
+    "sha256": "615a1d72c11c35b3128874ad7754965f8f07493ef8e01e231408a0d9b13d3ca0",
+    "download_size": 515584
   },
   "CatClawMusic/lxSource": {
     "author": "CatClawMusic",
     "name": "lxSource",
     "display_name": "LX 源音乐",
     "short_desc": "lx-music 自定义音源脚本引擎",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "repo": "https://github.com/kankejiang/CatClawMusic.Plugins.LxSource",
     "desc": "内嵌 Jint 引擎运行 lx-music 自定义源 .js 脚本（在线/本地导入）：支持网易云/QQ/酷我/酷狗等，播放直链/歌词（原文+翻译+罗马音）/封面/多音质；内置酷我/咪咕内容源（歌单/榜单/歌单搜索）",
     "tags": [
@@ -49,11 +49,11 @@
       "windows"
     ],
     "host_version": ">=1.8.0",
-    "updated_at": "2026-08-27T09:52:15Z",
+    "updated_at": "2026-09-07T05:24:40Z",
     "stars": 1,
-    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.LxSource/releases/download/v0.4.2/CatClawMusic.Plugins.LxSource.ccp",
-    "sha256": "afed65ca4da43332aa81729f88fb86fa020442c6e51dd1de89ab5afde7bc8812",
-    "download_size": 3177472
+    "download_url": "https://github.com/kankejiang/CatClawMusic.Plugins.LxSource/releases/download/v0.4.3/CatClawMusic.Plugins.LxSource.ccp",
+    "sha256": "6d64847a5e14fb3571c2247ba7570a22b056cae75fb0cbe28f0a42e9a617ed5b",
+    "download_size": 207360
   },
   "CatClawMusic/netEaseMusic": {
     "author": "CatClawMusic",
